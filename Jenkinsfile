@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Cloning') {
         steps {
-          git branch: 'develop',
+          git branch: 'main',
           credentialsId: 'jenkins-ec2',
           url: 'https://github.com/mandinga27/mandinga27/python-docker.git'
 
