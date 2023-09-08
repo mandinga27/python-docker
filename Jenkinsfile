@@ -8,7 +8,7 @@ pipeline {
         steps {
           git branch: 'main',
           credentialsId: 'jenkins-ec2',
-          url: 'https://github.com/mandinga27/mandinga27/python-docker.git'
+          url: 'https://github.com/mandinga27/python-docker.git'
 
           script {
 		        try {
