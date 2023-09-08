@@ -25,6 +25,13 @@ pipeline {
         }
       }
     }
+    stage('Build docker image'){
+            steps{
+                script{
+                    sh 'docker build -t test:v2 .'
+                }
+            }
+    }
     stage('prueba library') {
       steps{
         script{

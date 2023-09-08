@@ -23,7 +23,8 @@ def youtube():
     yd.download(".\\D:\\Disco D\\Scripts\\Python\\test")
 
 
-def Download(link):
+def Download():
+    link = "https://youtube.com/watch?v=9bZkp7q19f0"
     youtubeObject = YouTube(link)
     youtubeObject = youtubeObject.streams.get_highest_resolution()
     try:
@@ -37,7 +38,7 @@ def Download(link):
 
 if __name__ == '__main__':
     print_hi('PyCharm')
-    link = input("Enter the YouTube video URL: ")
-    Download(link)
+
+    Download()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
