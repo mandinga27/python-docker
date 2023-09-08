@@ -24,6 +24,7 @@ pipeline {
             }
         }
       }
+    }
     stage('prueba library') {
       steps{
         script{
