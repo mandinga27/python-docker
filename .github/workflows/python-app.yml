@@ -30,6 +30,21 @@ jobs:
         if [ -f requirements.txt ]; 
           then pip install -r requirements.txt; 
         fi
+  sonarCloudTrigger:
+    needs: despedida
+    name: SonarCloud Trigger
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        #uses: jinguji/sonarcloud-gradle-github-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
     #- name: Lint with flake8
     #  run: |
         # stop the build if there are Python syntax errors or undefined names
