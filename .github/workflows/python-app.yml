@@ -30,6 +30,7 @@ jobs:
         if [ -f requirements.txt ]; 
           then pip install -r requirements.txt; 
         fi
+
   sonarCloudTrigger:
     name: SonarCloud Trigger
     runs-on: ubuntu-latest
